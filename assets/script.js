@@ -15,29 +15,17 @@ const slides = [
 		"image":"slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
+	
 ]
 
 // Récupérer les éléments du DOM
-//const banner = document.getElementById('banner');
 const leftArrow = document.getElementsByClassName('arrow_left')[0];
 const rightArrow = document.getElementsByClassName('arrow_right')[0];
-
-// Ajouter un event listener sur la flèche gauche
-leftArrow.addEventListener('click', function() {
-  console.log('Clic sur la flèche gauche');
-});
-
-// Ajouter un event listener sur la flèche droite
-rightArrow.addEventListener('click', function() {
-  console.log('Clic sur la flèche droite');
-});
-
-
-
+// Récupérer le conteneur des bullet points 
 const dotsContainer = document.querySelector('.dots');
 // Ajouter les bullet points
 slides.forEach((slide, index) => {
-  const dot = document.createElement('div');
+  const dot = document.createElement('div'); // Créer un nouvel élément div pour représenter un B.P
   dot.classList.add('dot');
   if (index === 0) {
     dot.classList.add('dot_selected');
@@ -49,10 +37,9 @@ slides.forEach((slide, index) => {
 
 // Initialisation de l'index de la diapositive courante à 0
 let slideIndex = 0;
-
-
 // Ajout d'un écouteur d'événements sur la flèche droite
 rightArrow.addEventListener('click', () => {
+  console.log('Clic sur la flèche droite');
   slideIndex++;
   if (slideIndex >= slides.length) {
     // Si on est à la dernière diapositive, afficher la première diapositive
@@ -64,6 +51,7 @@ rightArrow.addEventListener('click', () => {
 
 // Ajout d'un écouteur d'événements sur la flèche gauche
 leftArrow.addEventListener('click', () => {
+console.log('Clic sur la flèche gauche');
   slideIndex--;
   if (slideIndex < 0) {
     // Si on est à la première diapositive, afficher la dernière diapositive
@@ -93,6 +81,3 @@ function updateSlider() {
 	  dot.classList.toggle('dot_selected', index === slideIndex);
 	});
       }
-    
-
-
