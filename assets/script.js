@@ -33,8 +33,6 @@ slides.forEach((slide, index) => {
   dotsContainer.appendChild(dot);
 });
 
-
-
 // Initialisation de l'index de la diapositive courante à 0
 let slideIndex = 0;
 // Ajout d'un écouteur d'événements sur la flèche droite
